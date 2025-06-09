@@ -1,0 +1,47 @@
+{
+  "name": "template-deno-vite-lit-ts-storybook-publish-npm",
+  "private": false,
+  "version": "0.0.2",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^4.0.0",
+    "@storybook/addon-a11y": "^9.0.6",
+    "@storybook/addon-docs": "^9.0.6",
+    "@storybook/addon-vitest": "^9.0.6",
+    "@storybook/web-components-vite": "^9.0.6",
+    "@vitest/browser": "^3.2.2",
+    "@vitest/coverage-v8": "^3.2.2",
+    "lit": "^3.3.0",
+    "playwright": "^1.52.0",
+    "storybook": "^9.0.6",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.2"
+  },
+  "main": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./dist/index.es.js"
+    }
+  },
+  "types": "types/index.d.ts",
+  "files": [
+    "src",
+    "dist",
+    "types"
+  ],
+  "peerDependencies": {
+    "lit": "^3.3.0"
+  },
+  "overrides": {
+    "storybook": "$storybook"
+  }
+}
