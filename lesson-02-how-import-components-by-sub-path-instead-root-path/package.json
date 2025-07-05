@@ -1,0 +1,53 @@
+{
+  "name": "lesson-02-how-import-components-by-sub-path-instead-root-path",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.es.js",
+      "default": "./dist/index.es.js"
+    },
+    "./count-down": {
+      "types": "./types/count-down/count-down.d.ts",
+      "import": "./dist/count-down.es.js",
+      "default": "./dist/count-down.es.js"
+    },
+    "./count-down-gang": {
+      "types": "./types/count-down-gang/count-down-gang.d.ts",
+      "import": "./dist/count-down-gang.es.js",
+      "default": "./dist/count-down-gang.es.js"
+    }
+  },
+  "sideEffects": [
+    "./src/count-down/count-display.ts",
+    "./dist/count-display.es.js"
+  ],
+  "types": "types/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^4.0.1",
+    "@storybook/addon-a11y": "^9.0.15",
+    "@storybook/addon-docs": "^9.0.15",
+    "@storybook/addon-vitest": "^9.0.15",
+    "@storybook/web-components-vite": "^9.0.15",
+    "@vitest/browser": "^3.2.4",
+    "@vitest/coverage-v8": "^3.2.4",
+    "lit": "^3.3.0",
+    "playwright": "^1.53.2",
+    "storybook": "^9.0.15",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "lit": "^3.3.0"
+  }
+}

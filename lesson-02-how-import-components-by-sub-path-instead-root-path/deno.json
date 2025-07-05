@@ -1,0 +1,46 @@
+{
+  "tasks": {
+    "deno-build": {
+      "description": "Alternative to build script in package.json. This helps clarify the build process into two independent steps.",
+      "dependencies": ["tsc", "vite-build"]
+    },
+    "tsc": {
+      "description": "emit to declaration files",
+      "command": "tsc"
+    },
+    "vite-build": {
+      "description": "Builds the package.",
+      "command": "vite build"
+    },
+    "publish-npm": {
+      "description": "Publishes the package to NPM.",
+      "command": "npm publish"
+    },
+    "bump-patch": {
+      "description": "Bumps the patch version of the package.",
+      "command": "npm version patch --no-git-tag-version",
+      "dependencies": ["deno-build"]
+    }
+  },
+  "unstable": [
+    "unsafe-proto",
+    "sloppy-imports"
+  ],
+	"nodeModulesDir": "auto",
+  "fmt": {
+    "lineWidth": 100
+  },
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  }
+}
